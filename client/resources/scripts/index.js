@@ -14,19 +14,36 @@ function displaySongs(){
     }).then(function(json) { //asyncronous call
         console.log(json);
         songList=json;
-        let html ="";
-          songList.forEach((song) => {
-            html += `<br></br> <div class="card col-md-4 bg-dark text-white"> <br></br>
-            <img src="./resources/images/music.jpeg" class="card-img" alt="...">
-            <div class="card-img-overlay">
-                <h5 class="card-title">${song.songTitle}</h5>
-            </div>
-        </div>`;
-        })
+        let html=getFavSongs();
         document.getElementById("cards").innerHTML=html;
     }).catch(function(error) {
         console.log(error);
     });
+}
+
+function getFavSongs(){
+    let html = "";
+    songList.forEach((song) => {
+        if (song.favorited == "y")
+        {
+            html += `<br></br> <div class="card col-md-4 bg-dark text-white"> <br></br>
+            <img src="./resources/images/music.jpeg" class="card-img" alt="...">
+            <div class="card-img-overlay">
+                <h5 class="card-title">${song.songTitle}&#9733;</h5>  
+            </div>
+            </div>`;
+        }
+        else
+        {
+            html += `<br></br> <div class="card col-md-4 bg-dark text-white"> <br></br>
+            <img src="./resources/images/music.jpeg" class="card-img" alt="...">
+            <div class="card-img-overlay">
+                <h5 class="card-title">${song.songTitle}</h5>  
+            </div>
+            </div>`;
+        }
+    })    
+    return html;
 }
 
 function addSong(){
