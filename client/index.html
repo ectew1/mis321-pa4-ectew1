@@ -28,16 +28,13 @@
                 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#addS">Add A Song</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#edit">Edit A Song</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#delete">Delete A Song</a>
+                        <a class="nav-link" href="#add">Add A Song</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#favorite">Favorite A Song</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#delete">Delete A Song</a>
                     </li>
                 </ul>
             </div>
@@ -56,55 +53,29 @@
     
     </div>
 
-    <div id="addS" class="container">
+    <div id="add" class="container">
         <form onsubmit="false;" methods="post">
-            <label class="form-label" for="postTitle">Add a new song here:</label><br>
+            <label class="form-label" for="postTitle">Add a new song here by entering its title:</label><br>
             <input class="form-control" type="text" id="postTitle" name="title"><br>
             <button class="btn btn-dark" onclick="addSong()">ADD</button>
         </form>
     </div>
 
-    <!-- </div> -->
-
-    <!-- <div id="add" class="container">
-        <form onsubmit="false;" method="post">
-            <label class="form-label" for="addSong">Add a new song here:</label><br>
-            <input class="form-control" type="text" id="addSong" name="addSong"><br>
-            <button class="btn btn-dark" onClick="addSong()">ADD</button>
-        </form>
-    </div> -->
-
-    <div id="edit" class="container">
+    <div id="favorite" class="container">
         <form onsubmit="false;">
-            <label class="form-label" for="title">Edit a song here:</label><br>
-            <input class="form-control" type="text" id="editSong" name="title"><br>
-            <button class="btn btn-dark">EDIT</button>
+            <label class="form-label" for="putTitle">Favorite a song here by entering its title:</label><br>
+            <input class="form-control" type="text" id="putTitle" name="title"><br>
+            <button class="btn btn-dark" onclick="favoriteSong()">FAVORITE</button>
         </form>
     </div>
 
     <div id="delete" class="container">
         <form onsubmit="false;" methods="delete">
-            <label class="form-label" for="deleteTitle">Delete a song here:</label><br>
+            <label class="form-label" for="deleteTitle">Delete a song here by entering its title:</label><br>
             <input class="form-control" type="text" id="deleteTitle" name="title"><br>
             <button class="btn btn-dark" onclick="deleteSong()">DELETE</button>
         </form>
     </div>
-
-    <div id="favorite" class="container">
-        <form onsubmit="false;">
-            <label class="form-label" for="title">Favorite a song here:</label><br>
-            <input class="form-control" type="text" id="title" name="title"><br>
-            <button class="btn btn-dark">FAVORITE</button>
-        </form>
-    </div>
-
-    <!-- <div id="search" class="container">
-        <form onsubmit="return false;">
-            <label class="form-label" for="searchSong">Find a song here:</label><br>
-            <input class="form-control" type="text" id="searchSong" name="searchSong"><br>
-            <button class="btn btn-dark" onclick="findSongs()">Find Song</button>
-          </form>
-    </div> -->
 
     <div class="container">
         <div id="searchSongs" class="row"></div>

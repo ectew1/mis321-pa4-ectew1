@@ -12,6 +12,11 @@ namespace api.Models
         public string Deleted { get; set; }
         public string Favorited { get; set; }
 
+        public Song()
+        {
+            SongTimestamp = DateTime.Now;
+        }
+
         public override string ToString() // overriding the ToString for the song class to include all properties of the class
         {
             return SongTitle + " (ID: " + SongID + ", Added " + SongTimestamp + ")";

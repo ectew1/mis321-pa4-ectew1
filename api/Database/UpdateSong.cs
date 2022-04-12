@@ -16,15 +16,12 @@ namespace api.Database
             using var con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = @"UPDATE songs SET Title = @SongTitle, Timestamp = @SongTimestamp, Deleted = @Deleted, Favorited = @Favorited WHERE id = @id";
+            string stm = @"UPDATE songs SET Favorited = @Favorited WHERE Title = @SongTitle";
             using var cmd = new MySqlCommand(stm, con);
 
             //now identifying what those @ really mean
-            cmd.Parameters.AddWithValue("@id", song.SongID);
             cmd.Parameters.AddWithValue("@SongTitle", song.SongTitle);
-            cmd.Parameters.AddWithValue("@SongTimestamp", song.SongTimestamp);
-            cmd.Parameters.AddWithValue("@Deleted", song.Deleted);
-            cmd.Parameters.AddWithValue("@Favorited", song.Favorited);
+            cmd.Parameters.AddWithValue("@Favorited", 'y');
 
             cmd.Prepare();
 
